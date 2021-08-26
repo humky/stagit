@@ -71,7 +71,7 @@ writeheader(FILE *fp)
 	fprintf(fp, "</title>\n<link rel=\"icon\" type=\"image/png\" href=\"%s./favicon.png\" />\n", relpath);
 	fprintf(fp, "<link rel=\"stylesheet\" type=\"text/css\" href=\"%s./styles.css\" />\n", relpath);
 	fputs("</head>\n<body>\n", fp);
-	fprintf(fp, "<table>\n<tr><td><img src=\"%s./logo.png\" alt=\"\" width=\"32\" height=\"32\" /></td>\n"
+	fprintf(fp, "<table>\n<tr>\n"
 	        "<td><span class=\"desc\">", relpath);
 	xmlencode(fp, description, strlen(description));
 	fputs("</span></td></tr>\n"
