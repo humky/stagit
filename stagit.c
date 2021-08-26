@@ -488,7 +488,8 @@ writeheader(FILE *fp, const char *title)
 	fputs("</head>\n<body>\n<table><tr>", fp);
 	fputs("<td><h1>", fp);
 	xmlencode(fp, strippedname, strlen(strippedname));
-	fputs("</h1><span class=\"desc\">", fp);
+	fputs("</h1></td></tr>", fp);
+    fputs("<tr><td><span class=\"desc\">", fp);
 	xmlencode(fp, description, strlen(description));
 	fputs("</span></td></tr>", fp);
 	if (cloneurl[0]) {
