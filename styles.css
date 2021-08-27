@@ -162,3 +162,15 @@ pre {
 
 pre a.line {
     padding-right: 0.3rem; }
+
+span.insertion {
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none; }
+
+span.deletion {
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none; }

@@ -662,11 +662,11 @@ printshowfile(FILE *fp, struct commitinfo *ci)
 	for (i = 0; i < ci->ndeltas; i++) {
 		patch = ci->deltas[i]->patch;
 		delta = git_patch_get_delta(patch);
-		fprintf(fp, "<b>diff --git a/<a id=\"h%zu\" href=\"%sfile/", i, relpath);
+		fprintf(fp, "<b>--- a/<a id=\"h%zu\" href=\"%sfile/", i, relpath);
 		xmlencode(fp, delta->old_file.path, strlen(delta->old_file.path));
 		fputs(".html\">", fp);
 		xmlencode(fp, delta->old_file.path, strlen(delta->old_file.path));
-		fprintf(fp, "</a> b/<a href=\"%sfile/", relpath);
+		fprintf(fp, "\n</a>+++ b/<a href=\"%sfile/", relpath);
 		xmlencode(fp, delta->new_file.path, strlen(delta->new_file.path));
 		fprintf(fp, ".html\">");
 		xmlencode(fp, delta->new_file.path, strlen(delta->new_file.path));
@@ -691,13 +691,11 @@ printshowfile(FILE *fp, struct commitinfo *ci)
 				if (git_patch_get_line_in_hunk(&line, patch, j, k))
 					break;
 				if (line->old_lineno == -1)
-					fprintf(fp, "<a href=\"#h%zu-%zu-%zu\" id=\"h%zu-%zu-%zu\" class=\"i\">+",
+					fprintf(fp, "<a href=\"#h%zu-%zu-%zu\" id=\"h%zu-%zu-%zu\" class=\"i\"><span class=\"insertion\">+</span>",
 						i, j, k, i, j, k);
 				else if (line->new_lineno == -1)
-					fprintf(fp, "<a href=\"#h%zu-%zu-%zu\" id=\"h%zu-%zu-%zu\" class=\"d\">-",
+					fprintf(fp, "<a href=\"#h%zu-%zu-%zu\" id=\"h%zu-%zu-%zu\" class=\"d\"><span class=\"deletion\">-</span>",
 						i, j, k, i, j, k);
-				else
-					putc(' ', fp);
 				xmlencodeline(fp, line->content, line->content_len);
 				putc('\n', fp);
 				if (line->old_lineno == -1 || line->new_lineno == -1)
