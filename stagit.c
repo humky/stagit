@@ -467,8 +467,8 @@ printtimeshort(FILE *fp, const git_time *intime)
 void
 writeheader(FILE *fp, const char *title)
 {
-	fputs("<!DOCTYPE html>\n"
-		"<html>\n<head>\n"
+	fputs("<!doctype html>\n"
+		"<html lang=\"en\" style=\"background-color:var(--bg);>\n<head>\n"
 		"<meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\" />\n"
 		"<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" />\n"
 		"<title>", fp);
