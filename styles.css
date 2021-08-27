@@ -98,9 +98,12 @@ b {
 hr {
     background-color: var(--hr);
 	border: none;
-    margin: 0.4rem 0.5rem 0.5rem 0.5rem;
+    margin-left: 0.5rem;
 	height: 1px;
     width: 100%; }
+
+div#content hr {
+    margin: 0.4rem 0.5rem 0.5rem 0; }
 
 table {
     border-collapse: collapse;
@@ -141,9 +144,7 @@ table tbody td {
 
 div#content {
 	vertical-align: top;
-	white-space: nowrap; }
-
-div#content p {
+	white-space: nowrap;
     margin: 0.5rem 0.5rem 0.4rem 0.5rem; }
 
 div#content:nth-child(1) {
