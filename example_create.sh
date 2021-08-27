@@ -35,9 +35,8 @@ for dir in "${reposdir}/"*/; do
 
 	# symlinks
 	ln -sf log.html index.html
-	ln -sf ../style.css style.css
-	ln -sf ../logo.png logo.png
-	ln -sf ../favicon.png favicon.png
+	ln -sf ../styles.css styles.css
+	ln -sf ../favicon.ico favicon.ico
 
 	echo "done"
 done
