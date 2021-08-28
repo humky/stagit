@@ -513,7 +513,7 @@ writeheader(FILE *fp, const char *title)
 	if (license)
 		fprintf(fp, " | <a href=\"%sfile/%s.html\">LICENSE</a>",
 		        relpath, license);
-	fputs("</td></tr></table>\n<hr/>\n<div id=\"content\">\n", fp);
+	fputs("</td></tr></table>\n<div id=\"content\">\n<hr/>", fp);
 }
 
 void

@@ -75,7 +75,7 @@ writeheader(FILE *fp)
 	        "<td><span class=\"desc\">", relpath);
 	xmlencode(fp, description, strlen(description));
 	fputs("</span></td></tr>\n"
-		"</table>\n<hr/>\n<div id=\"content\">\n"
+		"</table>\n<div id=\"content\">\n<hr/>"
 		"<table id=\"index\"><thead>\n"
 		"<tr><td><b>Name</b></td><td><b>Description</b></td>"
 		"<td><b>Last commit</b></td></tr>"
