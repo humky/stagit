@@ -557,11 +557,11 @@ writeblobhtml(FILE *fp, const git_blob *blob)
 void
 printcommit(FILE *fp, struct commitinfo *ci)
 {
-	fprintf(fp, "<b>commit</b> <a href=\"%scommit/%s.html\">%s</a>\n",
+	fprintf(fp, "<b>Commit:</b> <a href=\"%scommit/%s.html\">%s</a>\n",
 		relpath, ci->oid, ci->oid);
 
 	if (ci->parentoid[0])
-		fprintf(fp, "<b>parent</b> <a href=\"%scommit/%s.html\">%s</a>\n",
+		fprintf(fp, "<b>Parent:</b> <a href=\"%scommit/%s.html\">%s</a>\n",
 			relpath, ci->parentoid, ci->parentoid);
 
 	if (ci->author) {
