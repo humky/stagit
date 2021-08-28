@@ -75,7 +75,7 @@ h1 {
     font-size: 0.9375rem;
     font-weight: bold;
     vertical-align: middle;
-    margin: 0.1rem 0; }
+    margin: 0.05rem 0; }
 
 .desc {
     color: var(--fg); }
@@ -141,16 +141,19 @@ div#content hr {
     background-color: var(--hr);
     border: none;
     height: 1px;
-    margin: 0.4rem 0 0.5rem 0; }
+    margin: 0.4rem 0 0.4rem 0; }
+
+div#content > p {
+    padding-top: 0.156rem; }
 
 div#content:nth-child(1) {
     margin-left: 1rem; }
- 
+
 td.num {
     text-align: right; }
 
 tr.url td {
-    padding: 0.1rem 0.5rem 0.2rem 0.5rem; }
+    padding: 0.1rem 0.5rem 0.4rem 0.5rem; }
 
 pre {
     margin-bottom: 1rem;
