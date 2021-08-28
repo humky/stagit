@@ -1082,6 +1082,27 @@ writefiles(FILE *fp, const git_oid *id)
 	return ret;
 }
 
+char *
+dashify_ref(const char *ref)
+{
+   char *out;
+   size_t i;
+
+   out = calloc(strlen(ref), sizeof (char));
+   for (i = 0; i < strlen(ref); i++)
+   {
+       switch (ref[i])
+       {
+           case '/':
+               out[i] = '-';
+               break;
+           default:
+               out[i] = ref[i];
+       }
+   }
+   return out;
+}
+
 int
 writerefs(FILE *fp)
 {
@@ -1091,6 +1112,7 @@ writerefs(FILE *fp)
 	const char *titles[] = { "Branches", "Tags" };
 	const char *ids[] = { "branches", "tags" };
 	const char *s;
+    char *dashref;
 
 	if (getrefs(&ris, &refcount) == -1)
 		return -1;
@@ -1115,16 +1137,20 @@ writerefs(FILE *fp)
 
 		ci = ris[i].ci;
 		s = git_reference_shorthand(ris[i].ref);
+        dashref = dashify_ref(s);
 
 		fputs("<tr><td>", fp);
+        fprintf(fp, "<a href=\"./archives/%s-%s.tar.gz\">", strippedname, dashref);
 		xmlencode(fp, s, strlen(s));
-		fputs("</td><td>", fp);
+        fputs("</a></td><td>", fp);
 		if (ci->author)
 			printtimeshort(fp, &(ci->author->when));
 		fputs("</td><td>", fp);
 		if (ci->author)
 			xmlencode(fp, ci->author->name, strlen(ci->author->name));
 		fputs("</td></tr>\n", fp);
+
+        free(dashref);
 	}
 	/* table footer */
 	if (count)
