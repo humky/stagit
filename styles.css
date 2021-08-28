@@ -138,13 +138,11 @@ div#content {
     margin: 0.5rem 0.5rem 0.4rem 0.5rem; }
 
 div#content hr {
-    background-color: var(--hr);
-    border: none;
-    height: 1px;
-    margin: 0.4rem 0 0.4rem 0; }
+    border-color: var(--hr);
+    border-top: 1px; }
 
 div#content > p {
-    padding-top: 0.156rem; }
+    padding-top: 0.12rem; }
 
 div#content:nth-child(1) {
     margin-left: 1rem; }
