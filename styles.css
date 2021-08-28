@@ -44,7 +44,9 @@ table {
 --fg-sel:#FFF;
 --hr:#777;
 --link:#3783DD;
---link-h:#3DB8FF; } }
+--link-h:#3DB8FF;
+--insertion: #0E9635;
+--deletion: #EE3535; } }
 
 @media (prefers-color-scheme: dark) {
     :root {
@@ -54,7 +56,9 @@ table {
 --fg-sel:#000;
 --hr:#636363;
 --link:#455B89;
---link-h:#496DB6; } }
+--link-h:#496DB6;
+--insertion: #29673B;
+--deletion: #843F3F; } }
 
 *,::before,::after {
     box-sizing:border-box; }
@@ -91,6 +95,12 @@ a:hover {
 ::selection {
     color: var(--fg-sel);
     background: var(--bg-sel); }
+
+a.i {
+    color: var(--insertion); }
+
+a.d {
+    color: var(--deletion); }
 
 b {
     font-weight: bold; }
