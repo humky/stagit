@@ -122,21 +122,21 @@ table tbody td {
     white-space:    normal; }
 
 #index thead tr td {
-    padding:        0 1rem 0.3rem 0; }
+    padding:        0.2rem 1.5rem 0.5rem 0; }
 #index tbody tr td {
-    padding:        0 1rem 0.2rem 0; }
+    padding:        0 1.5rem 0.3rem 0; }
 #log thead tr td {
-    padding:        0 0.5rem 0.4rem 0; }
+    padding:        0.2rem 0.5rem 0.5rem 0; }
 #log tbody tr td {
     padding:        0 0.5rem 0.2rem 0; }
 #files thead tr td {
-    padding:        0 0.5rem 0.2rem 0.5rem; }
+    padding:        0.2rem 0.5rem 0.3rem 0.5rem; }
 #tags thead tr td {
-    padding:        0 4rem 0.4rem 0; }
+    padding:        0 4rem 0.5rem 0; }
 #tags tbody tr td {
     padding:        0 2rem 0.2rem 0; }
 #branches thead tr td {
-    padding:        0 2rem 0.4rem 0; }
+    padding:        0.2rem 2rem 0.4rem 0; }
 #branches tbody tr td {
     padding:        0 2rem 0.2rem 0; }
 #branches thead tr td:nth-child(2) {
