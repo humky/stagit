@@ -526,7 +526,7 @@ size_t
 writeblobhtml(FILE *fp, const git_blob *blob)
 {
 	size_t n = 0, i, len, prev;
-	const char *nfmt = "<a href=\"#l%zu\" class=\"line\" id=\"l%zu\">%6zu</a>";
+	const char *nfmt = "<a href=\"#l%zu\" class=\"line\" id=\"l%zu\" data-line-number=\"%6zu\"></a>";
 	const char *s = git_blob_rawcontent(blob);
 
 	len = git_blob_rawsize(blob);
@@ -691,11 +691,13 @@ printshowfile(FILE *fp, struct commitinfo *ci)
 				if (git_patch_get_line_in_hunk(&line, patch, j, k))
 					break;
 				if (line->old_lineno == -1)
-					fprintf(fp, "<a href=\"#h%zu-%zu-%zu\" id=\"h%zu-%zu-%zu\" class=\"i\"><span class=\"insertion\">+</span>",
+					fprintf(fp, "<a href=\"#h%zu-%zu-%zu\" id=\"h%zu-%zu-%zu\" class=\"i\" data-mod-type=\"+\">",
 						i, j, k, i, j, k);
 				else if (line->new_lineno == -1)
-					fprintf(fp, "<a href=\"#h%zu-%zu-%zu\" id=\"h%zu-%zu-%zu\" class=\"d\"><span class=\"deletion\">-</span>",
+					fprintf(fp, "<a href=\"#h%zu-%zu-%zu\" id=\"h%zu-%zu-%zu\" class=\"d\" data-mod-type=\"-\">",
 						i, j, k, i, j, k);
+                else
+                    fputc(' ', fp);
 				xmlencodeline(fp, line->content, line->content_len);
 				putc('\n', fp);
 				if (line->old_lineno == -1 || line->new_lineno == -1)
