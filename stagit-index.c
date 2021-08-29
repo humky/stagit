@@ -68,8 +68,8 @@ writeheader(FILE *fp)
 		"<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" />\n"
 		"<title>", fp);
 	xmlencode(fp, description, strlen(description));
-	fprintf(fp, "</title>\n<link rel=\"icon\" type=\"image/x-icon\" href=\"%s./favicon.ico\" />\n", relpath);
-	fprintf(fp, "<link rel=\"stylesheet\" type=\"text/css\" href=\"%s./styles.css\" />\n", relpath);
+	fprintf(fp, "</title>\n<link rel=\"icon\" type=\"image/x-icon\" href=\"%sfavicon.ico\" />\n", relpath);
+	fprintf(fp, "<link rel=\"stylesheet\" type=\"text/css\" href=\"%sstyles.css\" />\n", relpath);
 	fputs("</head>\n<body>\n", fp);
 	fprintf(fp, "<table>\n<tr>\n"
 	        "<td><span class=\"desc\">", relpath);

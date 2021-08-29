@@ -479,12 +479,12 @@ writeheader(FILE *fp, const char *title)
 	if (description[0])
 		fputs(" - ", fp);
 	xmlencode(fp, description, strlen(description));
-	fprintf(fp, "</title>\n<link rel=\"icon\" type=\"image/x-icon\" href=\"%s./favicon.ico\" />\n", relpath);
-	fprintf(fp, "<link rel=\"alternate\" type=\"application/atom+xml\" title=\"%s Atom Feed\" href=\"%s./atom.xml\" />\n",
+	fprintf(fp, "</title>\n<link rel=\"icon\" type=\"image/x-icon\" href=\"%sfavicon.ico\" />\n", relpath);
+	fprintf(fp, "<link rel=\"alternate\" type=\"application/atom+xml\" title=\"%s Atom Feed\" href=\"%satom.xml\" />\n",
 		name, relpath);
-	fprintf(fp, "<link rel=\"alternate\" type=\"application/atom+xml\" title=\"%s Atom Feed (tags)\" href=\"%s./tags.xml\" />\n",
+	fprintf(fp, "<link rel=\"alternate\" type=\"application/atom+xml\" title=\"%s Atom Feed (tags)\" href=\"%stags.xml\" />\n",
 		name, relpath);
-	fprintf(fp, "<link rel=\"stylesheet\" type=\"text/css\" href=\"%s./styles.css\" />\n", relpath);
+	fprintf(fp, "<link rel=\"stylesheet\" type=\"text/css\" href=\"%sstyles.css\" />\n", relpath);
 	fputs("</head>\n<body>\n<table><tr>", fp);
 	fputs("<td><h1>", fp);
 	xmlencode(fp, strippedname, strlen(strippedname));
@@ -1142,7 +1142,7 @@ writerefs(FILE *fp)
         dashref = dashify_ref(s);
 
 		fputs("<tr><td>", fp);
-        fprintf(fp, "<a href=\"./archives/%s-%s.tar.gz\">", strippedname, dashref);
+        fprintf(fp, "<a href=\"archives/%s-%s.tar.gz\">", strippedname, dashref);
 		xmlencode(fp, s, strlen(s));
         fputs("</a></td><td>", fp);
 		if (ci->author)
