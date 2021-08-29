@@ -45,6 +45,7 @@ table {
 --hr:       #777;
 --link:     #3783DD;
 --link-h:   #3DB8FF;
+--line-h:   #CCC;
 --insertion:#0E9635;
 --deletion: #EE3535; } }
 
@@ -57,6 +58,7 @@ table {
 --hr:       #636363;
 --link:     #455B89;
 --link-h:   #496DB6;
+--line-h:   #000;
 --insertion:#29673B;
 --deletion: #843F3F; } }
 
@@ -91,6 +93,9 @@ a {
 a:hover {
     color:          var(--link-h);
     cursor:         pointer; }
+
+a:target {
+    background-color: var(--line-h); }
 
 ::selection {
     color:          var(--fg-sel);
