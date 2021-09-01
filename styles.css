@@ -43,9 +43,9 @@ table {
 --fg:       #444;
 --fg-sel:   #FFF;
 --hr:       #777;
---link:     #3783DD;
---link-h:   #3DB8FF;
---line-h:   #CCC;
+--link:     #2F7AD2;
+--link-h:   #2DA1E5;
+--line-h:   #D5D5D5;
 --insertion:#0E9635;
 --deletion: #EE3535; } }
 
@@ -91,21 +91,33 @@ a {
     text-decoration:none; }
 
 a:hover {
-    color:          var(--link-h);
-    cursor:         pointer; }
+    color:                  var(--link-h);
+    text-decoration:        underline;
+    text-underline-offset:  0.1rem;
+    cursor:                 pointer; }
+
+a:focus-visible {
+    color:                  var(--link-h);
+    outline:                none;
+    text-decoration:        underline;
+    text-underline-offset:  0.1rem; }
+
+a:active {
+    background-color:       var(--bg); }
 
 a:target {
-    background-color: var(--line-h); }
+    text-decoration:        none;
+    background-color:       var(--line-h); }
 
 ::selection {
     color:          var(--fg-sel);
     background:     var(--bg-sel); }
 
 a.i, span.i {
-    color:              var(--insertion); }
+    color:          var(--insertion); }
 
 a.d, span.d {
-    color:              var(--deletion); }
+    color:          var(--deletion); }
 
 pre {
     margin-bottom:  1rem;
