@@ -691,10 +691,10 @@ printshowfile(FILE *fp, struct commitinfo *ci)
 				if (git_patch_get_line_in_hunk(&line, patch, j, k))
 					break;
 				if (line->old_lineno == -1)
-					fprintf(fp, "<a href=\"#h%zu-%zu-%zu\" id=\"h%zu-%zu-%zu\" class=\"i\" data-mod-type=\"+\">",
+					fprintf(fp, "<a href=\"#h%zu-%zu-%zu\" id=\"h%zu-%zu-%zu\" class=\"i\"><span>+</span>",
 						i, j, k, i, j, k);
 				else if (line->new_lineno == -1)
-					fprintf(fp, "<a href=\"#h%zu-%zu-%zu\" id=\"h%zu-%zu-%zu\" class=\"d\" data-mod-type=\"-\">",
+					fprintf(fp, "<a href=\"#h%zu-%zu-%zu\" id=\"h%zu-%zu-%zu\" class=\"d\"><span>-</span>",
 						i, j, k, i, j, k);
                 else
                     fputc(' ', fp);

@@ -114,10 +114,18 @@ a:target {
     background:     var(--bg-sel); }
 
 a.i, span.i {
-    color:          var(--insertion); }
+    color:          var(--insertion); 
+    -webkit-user-select:text;
+    -moz-user-select:   text;
+    -ms-user-select:    text;
+    user-select:        text; }
 
 a.d, span.d {
-    color:          var(--deletion); }
+    color:          var(--deletion);
+    -webkit-user-select:text;
+    -moz-user-select:   text;
+    -ms-user-select:    text;
+    user-select:        text; }
 
 pre {
     margin-bottom:  1rem;
@@ -128,20 +136,6 @@ pre a.line::before {
     content:            attr(data-line-number);
     text-align:         right;
     padding-right:      1rem;
-    -webkit-user-select:none;
-    -moz-user-select:   none;
-    -ms-user-select:    none;
-    user-select:        none; }
-
-pre a.i::before {
-    content:            attr(data-mod-type);
-    -webkit-user-select:none;
-    -moz-user-select:   none;
-    -ms-user-select:    none;
-    user-select:        none; }
-
-pre a.d::before {
-    content:            attr(data-mod-type);
     -webkit-user-select:none;
     -moz-user-select:   none;
     -ms-user-select:    none;
