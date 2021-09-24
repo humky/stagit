@@ -500,7 +500,7 @@ writeheader(FILE *fp, const char *title)
 		fputs("</a></td></tr>", fp);
 	}
 	fputs("<tr><td>\n", fp);
-	fprintf(fp, "<a href=\"%s../index.html\">Home</a> | ", relpath);
+	fprintf(fp, "<a href=\"%s../index.html\">Index</a> | ", relpath);
 	fprintf(fp, "<a href=\"%slog.html\">Log</a> | ", relpath);
 	fprintf(fp, "<a href=\"%sfiles.html\">Files</a> | ", relpath);
 	fprintf(fp, "<a href=\"%srefs.html\">Refs</a>", relpath);
