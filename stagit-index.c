@@ -12,7 +12,7 @@ static git_repository *repo;
 
 static const char *relpath = "";
 
-static char description[255] = "Repositories";
+static char description[255] = "Repositories hosted at ";
 static char *name = "";
 
 void
@@ -74,7 +74,7 @@ writeheader(FILE *fp)
 	fprintf(fp, "<table>\n<tr>\n"
 	        "<td><span class=\"desc\">", relpath);
 	xmlencode(fp, description, strlen(description));
-	fputs("</span></td></tr>\n"
+    fputs("</span><a href=\"https://humky.xyz\">humky.xyz</a></td></tr>\n"
 		"</table>\n<div id=\"content\">\n<hr/>"
 		"<table id=\"index\"><thead>\n"
 		"<tr><td><b>Name</b></td><td><b>Description</b></td>"
